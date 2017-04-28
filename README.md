@@ -44,9 +44,13 @@ fred.weight = 999.2
 fred.homePlanet = "Mars"
 ```
 
+No, because fred is a constant declared by "let."
+
 ### Question 2
 
 Can you fix the class definition above so that it _does_ work?
+
+Declare the variable with "var" instead of "let."
 
 ### Question 3
 
@@ -74,9 +78,13 @@ bilbo.height = 1.42
 bilbo.homePlanet = "Saturn"
 ```
 
+No, because bilbo is a constant declared by "let."
+
 ### Question 4
 
 Can you change the declaration of `bilbo` so that the above three lines of code _do_ work?
+
+Declare the variable with "var" instead of "let."
 
 ### Question 5
 
@@ -90,6 +98,8 @@ jason.name = "Jason"
 
 What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
 
+Classes are reference types and both variables are pointing to the same object, so both names will now be "Jason."
+
 ### Question 6
 
 Given this bit of code that uses the `Alien` struct:
@@ -101,6 +111,8 @@ charlesFromJupiter.homePlanet = "Jupiter"
 ```
 
 What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
+
+Structs are value types, so charles.homePlanet will still be "Pluto" although charlesFromJupiter.homePlanet will be "Jupiter."
 
 ### Question 7
 
@@ -123,9 +135,13 @@ struct BankAccount {
 
 Does this code work? Why or why not?
 
+It doesn't work because the functions need to have the "mutating" keyword in front of the them.
+
 ### Question 8
 
 Can you fix the `BankAccount` struct so it _does_ work?
+
+Put the "mutating" keyword in front of the functions.
 
 ### Question 9
 
@@ -138,6 +154,8 @@ joeAccount.withdraw(50.0)
 ```
 
 What will the value of `joeAccount.balance` be after the above code runs? What about the value of `joeOtherAccount.balance`? Why?
+
+Structs are value types, so joeAccount.balance will be 50 while joeOtherAccount will still be 100.
 
 ### Question 10
 
@@ -168,5 +186,7 @@ library2.add(track: "Come As You Are")
 ```
 
 After this code runs, what are the contents of `library1.tracks`? What about the contents of `library2.tracks`? Why?
+
+Classes are reference types, so both library1.tracks and library2.tracks will have "Michelle", "Voodoo Child", and "Come As You Are."
 
 <a href='https://learn.co/lessons/ClassesVsStructs' data-visibility='hidden'>View this lesson on Learn.co</a>
